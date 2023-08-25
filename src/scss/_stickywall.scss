@@ -1,0 +1,26 @@
+.sider_search{
+
+    .ant-input-affix-wrapper{
+        .ant-input{
+            background: transparent;
+        }
+        .ant-input::placeholder{
+            font-weight: 700;
+            padding-left: 10px;
+        }
+    }
+}
+.task-menu{
+    .ant-menu-item{
+        font-family:sans-serif;
+        font-weight: 500;
+    }
+    .ant-menu-item-selected{
+        font-weight: 700;
+        color: #979797 !important;
+        background: #EBEBEB !important;
+        .ant-menu-title-content{
+            color: #525252;
+        }
+    }
+}

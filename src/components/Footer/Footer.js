@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
     const year = new Date().getFullYear()
     return (
-        <footer className='py-2 bg-primary'>
+        <footer className='py-2 bg-dark'>
             <div className="container">
                 <div className="row">
                     <div className="col">

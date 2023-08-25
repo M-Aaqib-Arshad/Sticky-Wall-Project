@@ -20,7 +20,7 @@ export default function Navbar() {
   }
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-primary navbar-dark">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
         <div className="container">
           <Link to="/" className="navbar-brand">Logo</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,12 +38,16 @@ export default function Navbar() {
                 <Link to="/contact" className="nav-link">Contact</Link>
               </li>
             </ul>
-            <div className="d-flex">
+            <div className="d-flex gap-3">
               {!isAuth
-                ? <Link to="/auth/login" className="btn btn-light">Login</Link>
+                ?<>
+                 <Link to='/auth/login' className='btn btn-info text-white'>login</Link>
+                    <Link to='/auth/register' className='btn btn-warning text-white'>Register</Link> 
+                </>
                 : <>
                   <Link to="/dashboard" className="btn btn-info">Dashboard</Link>
                   <button className='btn btn-danger ms-2' onClick={handleLogout}>Logout</button>
+                {/* {user.reloadUserInfo.providerUserInfo[0].photoUrl &&  <Avatar size="large" src={user.reloadUserInfo.providerUserInfo[0].photoUrl} /> } */}
                 </>
               }
             </div>

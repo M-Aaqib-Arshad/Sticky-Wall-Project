@@ -2,6 +2,7 @@ import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import UpdateTodo from './Home/UpdateTodo'
+import NoPage from '../../components/NoPage'
 
 export default function Index() {
     return (
@@ -13,7 +14,7 @@ export default function Index() {
                 {/* <Route path='register' element={<Register />} />
             <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='reset-password' element={<ResetPassword />} /> */}
-                <Route path="*" element={<h1>404</h1>} />
+                <Route path="*" element={<NoPage />} />
             </Routes>
         </div>
     )

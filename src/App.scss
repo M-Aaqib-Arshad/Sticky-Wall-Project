@@ -1,6 +1,13 @@
 @import "./scss/bootstrap";
 @import "./scss/auth";
 @import "./scss/screenLoader";
+@import "./scss//libraries";
+@import "./scss/stickywall";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 #root {
     display: flex;
