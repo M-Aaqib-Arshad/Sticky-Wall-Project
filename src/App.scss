@@ -14,7 +14,13 @@
     flex-direction: column;
     min-height: 100vh;
 }
+body{
+    background: #FAFAFA !important;
+}
 
 main {
     flex: 1 0 auto;
+}
+.card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

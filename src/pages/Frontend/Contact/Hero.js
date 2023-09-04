@@ -6,7 +6,7 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useAuthContext } from 'contexts/AuthContext';
 import 'react-quill/dist/quill.snow.css';
 import EditorToolbar, { modules, formats } from "components/toolbar/Editor";
-import "react-quill/dist/quill.snow.css";
+
 // import { Editor } from "react-draft-wysiwyg";
 // import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 const { Title } = Typography;

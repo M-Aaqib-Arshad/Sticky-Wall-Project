@@ -3,6 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import { useAuthContext } from 'contexts/AuthContext';
 import Routes from "pages/Routes"
 import "./config/globle"
+import "react-quill/dist/quill.snow.css";
 
 function App() {
 

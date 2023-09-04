@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom'
-import { MenuOutlined,PlusOutlined,DoubleRightOutlined  } from '@ant-design/icons';
+import { MenuOutlined, PlusOutlined, DoubleRightOutlined } from '@ant-design/icons';
 import { Layout, Menu, theme, Input, Divider, message } from 'antd';
 import { FaSearch, FaCalendarAlt } from '../../../node_modules/react-icons/fa';
-import { AiOutlineBars,AiOutlineDoubleLeft, AiTwotoneWallet} from '../../../node_modules/react-icons/ai';
+import { AiOutlineBars, AiOutlineDoubleLeft, AiTwotoneWallet } from '../../../node_modules/react-icons/ai';
 import { TbLogout } from "../../../node_modules/react-icons/tb";
 import ListColor from "../../components/list/list"
 
@@ -21,51 +21,48 @@ const { Header, Content, Sider } = Layout;
 
 
 
-export const colorDiv = () =>{
-    
-    
-    return(
-        <>
-    <div style={{
-        background:"red",
-        width:"15px",
-        height:"15px",
+export const colorDiv = () => {
+
+
+  return (
+    <>
+      <div style={{
+        background: "red",
+        width: "15px",
+        height: "15px",
         padding: "0px 15px 0px 0px",
-        borderRadius:"4px",
-        marginRight:"10px"
-    }}>
-    </div>
+        borderRadius: "4px",
+        marginRight: "10px"
+      }}>
+      </div>
     </>
   )
 }
 const Hero = () => {
-    const { isAuth, dispatch } = useAuthContext()
-    const [tasks, setTasks] = useState([{icon:DoubleRightOutlined,name:"Upcommings",path:'upcommings'},{icon:AiOutlineBars,name:"Today",path:'today'},{icon:FaCalendarAlt,name:"Calendar",path:'calendar'},{icon:AiTwotoneWallet,name:"Sticky Wall",path:'/'}])
+  const { dispatch } = useAuthContext()
+  const [tasks, setTasks] = useState([{ icon: DoubleRightOutlined, name: "Upcommings", path: 'upcommings' }, { icon: AiOutlineBars, name: "Today", path: 'today' }, { icon: FaCalendarAlt, name: "Calendar", path: 'calendar' }, { icon: AiTwotoneWallet, name: "Sticky Wall", path: '/' }])
 
-    const handleLogout = () => {
-      signOut(auth)
-        .then(() => {
-          message.success("Signout successful")
-          dispatch({ type: "SET_LOGGED_OUT" })
-        })
-        .catch(err => {
-          message.error("Signout not successful")
-        })
-    }
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        message.success("Signout successful")
+        dispatch({ type: "SET_LOGGED_OUT" })
+      })
+      .catch(err => {
+        message.error("Signout not successful")
+      })
+  }
 
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
   return (
     <Layout
       style={
         {
-        height:"100vh",
+          height: "100vh",
           display: "flex",
           justifyContent: "center",
-         
-         
-          
+
+
+
         }}>
       <Layout
         style={
@@ -113,18 +110,18 @@ const Hero = () => {
             <Input className='tranparent' style={{ background: "transparent", border: "none" }} prefix={<FaSearch fill='#B3B3B3' />} placeholder="Search" />
           </div>
 
-         <div 
-         className="Menu_heading mx-3 mt-3"
-         style={
-          {
-            color:"#585858",
-            fontFamily:"sans-serif",
-            fontSize:"12px",
-            fontWeight:"600"
-          }
-         }
-         
-         >TASKS</div>
+          <div
+            className="Menu_heading mx-3 mt-3"
+            style={
+              {
+                color: "#585858",
+                fontFamily: "sans-serif",
+                fontSize: "12px",
+                fontWeight: "600"
+              }
+            }
+
+          >TASKS</div>
           <Menu className='task-menu'
             style={
               {
@@ -144,20 +141,20 @@ const Hero = () => {
             )}
           />
           <Divider />
-            <div 
-         className="Menu_heading mx-3 mt-3"
-         style={
-          {
-            color:"#585858",
-            fontFamily:"sans-serif",
-            fontSize:"12px",
-            fontWeight:"600"
-          }
-         }
-         
-         >LISTS</div>
+          <div
+            className="Menu_heading mx-3 mt-3"
+            style={
+              {
+                color: "#585858",
+                fontFamily: "sans-serif",
+                fontSize: "12px",
+                fontWeight: "600"
+              }
+            }
+
+          >LISTS</div>
           <Menu
-          className='task-menu'
+            className='task-menu'
             style={
               {
                 // border: "3px solid blue",
@@ -167,17 +164,17 @@ const Hero = () => {
             theme="light"
             mode="inline"
             defaultSelectedKeys={['4']}
-            items={[{icon:AiOutlineDoubleLeft,name:"Personal",listColor:"#FE6B69"},{icon:AiOutlineBars,name:"Work",listColor:'#55D8ED'}].map(
+            items={[{ icon: AiOutlineDoubleLeft, name: "Personal", listColor: "#FE6B69" }, { icon: AiOutlineBars, name: "Work", listColor: '#55D8ED' }].map(
               (object, index) => ({
                 key: String(index + 1),
                 icon: <ListColor Color={object.listColor} />,
                 // icon: React.createElement(colorDiv),
-                label:  object.name,
+                label: object.name,
               }),
             )}
           />
-           <Menu
-          className='task-menu'
+          <Menu
+            className='task-menu'
             style={
               {
                 // border: "3px solid blue",
@@ -187,18 +184,18 @@ const Hero = () => {
             theme="light"
             mode="inline"
             defaultSelectedKeys={['4']}
-            items={[{icon:PlusOutlined,name:"ADD NEW LIST"}].map(
+            items={[{ icon: PlusOutlined, name: "ADD NEW LIST" }].map(
               (object, index) => ({
                 key: String(index + 1),
                 icon: React.createElement(PlusOutlined),
-                label:  object.name,
+                label: object.name,
               }),
             )}
           />
           <Divider />
-       
-        <Menu
-          className='task-menu'
+
+          <Menu
+            className='task-menu'
             style={
               {
                 // border: "3px solid blue",
@@ -208,18 +205,18 @@ const Hero = () => {
             theme="light"
             mode="inline"
             defaultSelectedKeys={['4']}
-            items={[{icon:TbLogout,name:"Sign out"}].map(
+            items={[{ icon: TbLogout, name: "Sign out" }].map(
               (object, index) => ({
                 key: String(index + 1),
                 icon: React.createElement(object.icon),
-                label:  <button className='btn bg-transparent text-danger' onClick={handleLogout}> {object.name}</button>,
-                style:{
-                    color:"red",
-                    fontFamily:'sans-serif',
-                    fontWeight:'500',
-                    margin:'70px 0 0 0'
+                label: <button className='btn bg-transparent text-danger' onClick={handleLogout}> {object.name}</button>,
+                style: {
+                  color: "red",
+                  fontFamily: 'sans-serif',
+                  fontWeight: '500',
+                  margin: '70px 0 0 0'
                 },
-                
+
 
               }),
             )}
@@ -266,17 +263,17 @@ const Hero = () => {
                 background: "transparent",
                 border: "1px solid grey",
                 borderRadius: "20px 20px 20px 20px"
-                
-                
+
+
               }}
             >
-               <Routes>
-//                 <Route path='/' element={<Home />} />
-//                 <Route path='today' element={<Today />} />
-//                 <Route path='upcommings' element={<Upcommings />} />
-//                 <Route path='calendar' element={<Calendar />} />
-//                 <Route path="*" element={<NoPage />} />
-//             </Routes>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='today' element={<Today />} />
+                <Route path='upcommings' element={<Upcommings />} />
+                <Route path='calendar' element={<Calendar />} />
+                <Route path="*" element={<NoPage />} />
+              </Routes>
             </div>
           </Content>
 
